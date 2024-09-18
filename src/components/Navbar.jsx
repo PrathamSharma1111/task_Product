@@ -1,33 +1,38 @@
 import React, { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
-  
+    const [isOpen, setIsOpen] = useState(false);
     const [activeLink, setActiveLink] = useState('Home');
-
 
     const handleActiveLink = (link) => {
         setActiveLink(link);
     };
 
-    
     const getLinkClass = (link) => (
         link === activeLink
-            ? "text-black text-xl font-semibold relative"
+            ? "text-black text-xl font-semibold rounded-lg  md:px-0 bg-green-600 px-4 text-white md:bg-white md:text-black relative"
             : "text-black hover:text-gray-800"
     );
 
     return (
         <header className="bg-white shadow-md">
-            <div className="container mx-auto px-20 py-2 flex justify-between items-center">
-
+            <div className="container mx-auto px-4 py-4 flex justify-between items-center lg:px-10 xl:px-20">
                 {/* Logo */}
                 <div className="text-green-500 font-bold text-xl">
-                    <img src={logo} alt="Logo" />
+                    <img src={logo} alt="Logo" className="w-32 h-auto" />
+                </div>
+
+                {/* Hamburger Icon */}
+                <div className="md:hidden flex items-center">
+                    <button onClick={() => setIsOpen(!isOpen)}>
+                        {isOpen ? <FaTimes className="text-2xl" /> : <FaBars className="text-2xl" />}
+                    </button>
                 </div>
 
                 {/* Navigation Links */}
-                <nav className="space-x-8">
+                <nav className={`md:flex md:space-x-8 ${isOpen ? 'flex' : 'hidden'} flex-col md:flex-row absolute left-0 md:relative top-16 w-full bg-white md:bg-transparent md:top-auto md:space-x-8 p-1  lg:px-10 md:justify-end`}>
                     <a
                         href="#"
                         className={getLinkClass('Home')}
@@ -35,7 +40,7 @@ const Navbar = () => {
                     >
                         Home
                         {activeLink === 'Home' && (
-                            <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-1 w-1 bg-teal-500 rounded-full"></span>
+                            <span className="md:absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-1 w-1 bg-teal-500 rounded-full"></span>
                         )}
                     </a>
 
@@ -46,7 +51,7 @@ const Navbar = () => {
                     >
                         Free listing
                         {activeLink === 'Free listing' && (
-                            <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-1 w-1 bg-teal-500 rounded-full"></span>
+                            <span className="md:absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-1 w-1 bg-teal-500 rounded-full"></span>
                         )}
                     </a>
 
@@ -57,7 +62,7 @@ const Navbar = () => {
                     >
                         Service
                         {activeLink === 'Service' && (
-                            <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-1 w-1 bg-teal-500 rounded-full"></span>
+                            <span className="md:absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-1 w-1 bg-teal-500 rounded-full"></span>
                         )}
                     </a>
 
@@ -68,7 +73,7 @@ const Navbar = () => {
                     >
                         Contact Us
                         {activeLink === 'Contact Us' && (
-                            <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-1 w-1 bg-teal-500 rounded-full"></span>
+                            <span className="md:absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-1 w-1 bg-teal-500 rounded-full"></span>
                         )}
                     </a>
 
@@ -79,7 +84,7 @@ const Navbar = () => {
                     >
                         Login/Register
                         {activeLink === 'Login/Register' && (
-                            <span className="absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-1 w-1 bg-teal-500 rounded-full"></span>
+                            <span className="md:absolute left-1/2 transform -translate-x-1/2 -bottom-1 h-1 w-1 bg-teal-500 rounded-full"></span>
                         )}
                     </a>
                 </nav>
