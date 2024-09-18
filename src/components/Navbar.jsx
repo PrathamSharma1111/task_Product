@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
-    // State to track the active link
+  
     const [activeLink, setActiveLink] = useState('Home');
 
-    // Function to handle the active link change
+
     const handleActiveLink = (link) => {
         setActiveLink(link);
     };
 
-    // Dynamic class for the link to set active state styles
+    
     const getLinkClass = (link) => (
         link === activeLink
             ? "text-black text-xl font-semibold relative"
