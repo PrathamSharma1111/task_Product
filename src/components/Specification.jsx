@@ -1,6 +1,6 @@
 const Specification = () => {
     return (
-      <div className="bg-white shadow-md rounded p-4 lg:h-[300px]">
+      <div className="bg-white shadow-md rounded lg:w-[450px] p-4 lg:h-[300px]">
         <h2 className="text-xl font-semibold mb-4">Specification</h2>
         <div className="space-y-2">
           <p  className="flex items-center justify-between">Product Model:<span className="font-medium"> Escaper Mesh</span></p>

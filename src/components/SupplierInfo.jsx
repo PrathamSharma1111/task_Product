@@ -2,7 +2,7 @@ import supplyImage from '../assets/supply.png'
 import star from '../assets/star.png'
 const SupplierInfo = () => {
     return (
-        <div className="bg-white shadow-md rounded p-4 lg:h-[550px]">
+        <div className="bg-white shadow-md rounded p-4 lg:w-[520px] relative">
             <img src={supplyImage} alt="Supplier" className="w-full rounded" />
             <button className="w-full mt-4 py-2 text-white rounded"
                 style={{ background: 'linear-gradient(180deg, #74CC7E 0%, #00818A 100%)' }} >Follow</button>

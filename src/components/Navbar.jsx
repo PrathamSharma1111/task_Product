@@ -8,13 +8,14 @@ const Navbar = () => {
 
     const handleActiveLink = (link) => {
         setActiveLink(link);
+        // Optionally, smooth scroll to the section
+        document.getElementById(link)?.scrollIntoView({ behavior: 'smooth' });
     };
 
-    const getLinkClass = (link) => (
+    const getLinkClass = (link) =>
         link === activeLink
-            ? "text-black text-xl font-semibold rounded-lg  md:px-0 bg-green-600 px-4 text-white md:bg-white md:text-black relative"
-            : "text-black hover:text-gray-800"
-    );
+            ? "text-black text-xl font-semibold rounded-lg  md:px-0 bg-green-600 px-4 text-white md:bg-white md:text-black relative transition-all duration-300 ease-in-out"
+            : "text-black hover:text-gray-800 transition-all duration-300 ease-in-out";
 
     return (
         <header className="bg-white shadow-md">
@@ -32,7 +33,9 @@ const Navbar = () => {
                 </div>
 
                 {/* Navigation Links */}
-                <nav className={`md:flex md:space-x-8 ${isOpen ? 'flex' : 'hidden'} flex-col md:flex-row absolute left-0 md:relative top-16 w-full bg-white md:bg-transparent md:top-auto md:space-x-8 p-1  lg:px-10 md:justify-end`}>
+                <nav
+                    className={`md:flex md:space-x-8 ${isOpen ? 'flex' : 'hidden'} flex-col md:flex-row absolute left-0 md:relative top-16 w-full bg-white md:bg-transparent md:top-auto md:space-x-8 p-1 lg:px-10 md:justify-end z-50 transition-all duration-300 ease-in-out transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} md:transform-none`}
+                >
                     <a
                         href="#"
                         className={getLinkClass('Home')}

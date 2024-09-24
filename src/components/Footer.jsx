@@ -18,7 +18,7 @@ const Footer = () => {
 
                     {/* Links and Connect Us */}
                     <div className="flex flex-col md:flex-row w-full md:w-2/3">
-                        <div className="flex flex-col md:flex-row md:space-x-8 w-full">
+                        <div className="flex flex-col sm:flex-row md:space-x-8 w-full">
                             {/* Links Columns */}
                             <div className="mb-6 md:mb-0 w-full md:w-2/3">
                                 <h4 className="font-semibold mb-2 text-center">Links</h4>
@@ -44,7 +44,7 @@ const Footer = () => {
                         </div>
 
                         {/* Column 3 and 4 */}
-                        <div className="flex flex-col md:flex-row md:space-x-8 w-full">
+                        <div className="flex flex-col sm:flex-row md:space-x-8 w-full">
                             <div className="mb-6 md:mb-0 w-full md:w-2/3">
                                 <h4 className="font-semibold mb-2 text-center">Additional Links</h4>
                                 <ul className="space-y-2 text-gray-600 flex flex-col items-center justify-center">

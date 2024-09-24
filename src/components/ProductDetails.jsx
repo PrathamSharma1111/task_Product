@@ -1,15 +1,23 @@
 import SupplierInfo from './SupplierInfo';
 import Specification from './Specification';
-import ProductImage from '../assets/Product.png';
+import ProductImage from '../assets/shoes.png';
 import ProductView from '../assets/productMulti.png';
 import Heart from '../assets/heart.png';
 import MoreFromSeller from './MoreFromSeller';
 import ReviewsSection from './ReviewsSection';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
 const ProductDetails = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000, once: true });
+    }, []);
     return (
         <div className="container mx-auto px-4 md:px-8 lg:px-10 xl:px-20 pt-10 lg:pt-20">
-            <nav className="text-xs lg:text-sm text-gray-500 mb-2 lg:mb-4">
+            <nav className="text-xs lg:text-sm text-gray-500 mb-2 lg:mb-4 lg:px-12"
+                data-aos="fade-right" >
                 Home {'>'} Shoes {'>'}{' '}
                 <span className="text-black font-medium">
                     Round toe leather loafer shoe (Black)
@@ -18,23 +26,25 @@ const ProductDetails = () => {
 
             <div className="flex flex-col lg:flex-row justify-center items-start w-full">
                 {/* Product Image Section */}
-                <div className="w-full lg:w-auto">
+                <div className="w-full lg:w-auto flex flex-col lg:items-end items-center" data-aos="fade-up">
                     <img
                         src={ProductImage}
                         alt="Product"
-                        className="w-full lg:w-[600px] lg:h-[350px] rounded"
+                        className=" lg:w-[500px] lg:h-[448px] md:w-[500px]"
                     />
-                    <div className="mt-4 flex justify-center">
+                    <div className="mt-4 flex justify-center items-center gap-x-0.5 md:-ml-4 lg:ml-0" data-aos="fade-up">
+                        <BiChevronLeft className='text-white bg-gray-500 w-7 h-7 rounded-full cursor-pointer' />
                         <img
                             src={ProductView}
                             alt="Product thumbnail"
-                            className="w-[90%] lg:w-[90%] h-auto rounded"
+                            className=" lg:w-[80%] h-auto rounded"
                         />
+                        <BiChevronRight className='text-white bg-gray-500 w-7 h-7 rounded-full cursor-pointer' />
                     </div>
                 </div>
 
                 {/* Product Info Section */}
-                <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:ml-8">
+                <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:ml-8" data-aos="fade-left">
                     <h1 className="text-lg lg:text-2xl font-semibold">
                         Round toe leather loafer shoe (Black)
                     </h1>
@@ -90,13 +100,19 @@ const ProductDetails = () => {
                         commodo consequat. Duis aute irure dolor in reprehenderit in
                         voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
                         sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit anim id est laborum...
+                        deserunt mollit anim id est laborum Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum
                     </p>
                 </div>
             </div>
 
             {/* Supplier Info and Specification */}
-            <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 lg:px-10">
+            <div className="mt-8 grid grid-cols-1 lg:flex gap-12 lg:gap-12 lg:px-12" data-aos="fade-up">
                 <SupplierInfo />
                 <Specification />
             </div>

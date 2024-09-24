@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import ProductCard from './ProductCard';
 import ProductCardImage from '../assets/productCard.png'
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 const MoreFromSeller = () => {
     const scrollRef = useRef(null);
 
@@ -99,15 +100,15 @@ const MoreFromSeller = () => {
         <div className="relative">
             <button
                 onClick={scrollLeft}
-                className="absolute right-10 z-10 bg-gray-800 text-white p-2 rounded-full"
+                className="absolute -top-10 right-10 z-10 bg-gray-800 text-white p-2 rounded-full"
             >
-                &lt;
+                <BiChevronLeft />
             </button>
             <button
                 onClick={scrollRight}
-                className="absolute right-0 z-10 bg-gray-800 text-white p-2 rounded-full"
+                className="absolute -top-10 right-0 z-10 bg-gray-800 text-white p-2 rounded-full"
             >
-                &gt;
+                <BiChevronRight />
             </button>
             <div
                 ref={scrollRef}
